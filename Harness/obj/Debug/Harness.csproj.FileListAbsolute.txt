@@ -1,0 +1,11 @@
+C:\Workshop\Harness\Harness\bin\Debug\Harness.dll
+C:\Workshop\Harness\Harness\bin\Debug\Harness.pdb
+C:\Workshop\Harness\Harness\bin\Debug\nunit.framework.dll
+C:\Workshop\Harness\Harness\bin\Debug\WebDriver.dll
+C:\Workshop\Harness\Harness\bin\Debug\WebDriver.Support.dll
+C:\Workshop\Harness\Harness\bin\Debug\nunit.framework.xml
+C:\Workshop\Harness\Harness\bin\Debug\WebDriver.xml
+C:\Workshop\Harness\Harness\bin\Debug\WebDriver.Support.xml
+C:\Workshop\Harness\Harness\obj\Debug\Harness.csprojResolveAssemblyReference.cache
+C:\Workshop\Harness\Harness\obj\Debug\Harness.dll
+C:\Workshop\Harness\Harness\obj\Debug\Harness.pdb

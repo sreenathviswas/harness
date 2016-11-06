@@ -57,17 +57,14 @@ namespace Harness
 
         public void ClearAll<T>(T t)
         {
-            foreach (var property in typeof(T).GetProperties())
+            var properties = typeof(T).GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(ClearableAttribute)));
+            foreach (var property in properties)
             {
                 var p = property.GetValue(t);
 
                 if (p is IWebElement)
                 {
-                    var element = ((IWebElement)p);
-                    if (element.TagName.Equals("input"))
-                    {
-                        element.Clear();
-                    }
+                    ((IWebElement)p).Clear();
                 }
             }
         }

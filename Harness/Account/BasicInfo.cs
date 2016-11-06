@@ -12,15 +12,19 @@ namespace Harness
 {
     public class BasicInfo : BasePage
     {
+        [Clearable]
         [FindsBy(How = How.Name, Using = "AccountName")]
         public IWebElement AccountName { get; set; }
 
+        [Clearable]
         [FindsBy(How = How.Name, Using = "NPI")]
         public IWebElement NPI { get; set; }
 
+        [Clearable]
         [FindsBy(How = How.Name, Using = "TaxID")]
         public IWebElement TaxID { get; set; }
 
+        [Clearable]
         [FindsBy(How = How.Name, Using = "WebsiteEdit")]
         public IWebElement Website { get; set; }
         
@@ -40,17 +44,10 @@ namespace Harness
             WaitForElement<BasicInfo>(30);
 
             ClearAll<BasicInfo>(this);
-
-            //AccountName.Clear();
-            AccountName.SendKeys(accountName);
-
-            //NPI.Clear();
-            NPI.SendKeys(npi);
-
-            //TaxID.Clear();
+           
+            AccountName.SendKeys(accountName);        
+            NPI.SendKeys(npi);            
             TaxID.SendKeys(taxID.ToString());
-
-            //Website.Clear();
             Website.SendKeys(website);
 
             Save.Click();

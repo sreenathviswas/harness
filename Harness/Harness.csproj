@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Account\BasicInfo.cs" />
     <Compile Include="Base\BasePage.cs" />
+    <Compile Include="Common\ClearableAttribute.cs" />
     <Compile Include="Common\SearchContext.cs" />
     <Compile Include="Harness.cs" />
     <Compile Include="Login\Login.cs" />

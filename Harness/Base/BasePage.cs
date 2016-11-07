@@ -26,6 +26,9 @@ namespace Harness
         [FindsBy(How = How.ClassName, Using = "toast-title")]
         public IWebElement Toastr { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//a[@ui-sref='.locations']")]
+        public IWebElement Location { get; set; }
+
         public void GotoPracticeSettings()
         {
             UserMenu.Click();
@@ -75,5 +78,21 @@ namespace Harness
             }
         }
 
-    }   
+        public void SearchGrid(string value)
+        {
+            this.SearchGrid(0, value);
+        }
+
+        public void SearchGrid(int index, string value)
+        {
+            var filter = GetFilters().ToArray()[index];
+            filter.SendKeys(value);
+            filter.SendKeys(Keys.Return);
+        }
+
+        private IReadOnlyCollection<IWebElement> GetFilters()
+        {
+            return SearchContext.Driver.FindElements(By.XPath("//input[@ng-model='model.filters[col.field]']"));
+        }
+    }
 }

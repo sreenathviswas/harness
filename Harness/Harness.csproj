@@ -55,7 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\BasicInfo.cs" />
+    <Compile Include="Common\IAddress.cs" />
+    <Compile Include="Setup\BasicInfo.cs" />
     <Compile Include="Base\BasePage.cs" />
     <Compile Include="Common\ClearableAttribute.cs" />
     <Compile Include="Common\Extensions.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Harness.cs" />
     <Compile Include="Login\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setup\Locations.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

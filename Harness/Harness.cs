@@ -19,7 +19,7 @@ namespace Harness
             SearchContext.Driver = new ChromeDriver();
             SearchContext.Driver.Manage().Window.Maximize();
             SearchContext.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(60));
-            SearchContext.Driver.Navigate().GoToUrl("http://celebration.fuzeqa2.com/#/login");
+            SearchContext.Driver.Navigate().GoToUrl("http://localhost:3000/#/login");
         }
 
         [TestCase("chinchu", "Abc@123")]
@@ -32,10 +32,13 @@ namespace Harness
         [Test]
         public void UpdateAccountBasicInfo()
         {
-            Login("chinchu", "Abc@123");
+            Login("3@fuze.com", "Abc@123");
 
-            BasicInfo basicInfo = new BasicInfo();
-            basicInfo.UpdateBasicInfo("Celebration Dental Group", "1003947326", 593408806, "http://celebration.fuzeqa1.com");
+            //BasicInfo basicInfo = new BasicInfo();
+            //basicInfo.UpdateBasicInfo("Celebration Dental Group", "1003947326", 593408806, "http://celebration.fuzeqa1.com");
+
+            Locations location = new Locations();
+            location.AddLocation();
         }
 
         [TearDown]

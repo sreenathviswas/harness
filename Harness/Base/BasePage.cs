@@ -80,10 +80,10 @@ namespace Harness
 
         public void SearchGrid(string value)
         {
-            this.SearchGrid(0, value);
+            this.SearchGrid(value, 0);
         }
 
-        public void SearchGrid(int index, string value)
+        public void SearchGrid(string value, int index)
         {
             var filter = GetFilters().ToArray()[index];
             filter.SendKeys(value);

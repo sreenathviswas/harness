@@ -42,27 +42,28 @@ namespace Harness
             PageFactory.InitElements(SearchContext.Driver, this);
         }
 
-        public void AddLocation()
+        public void AddLocation(string shortName, string locationName, string addressLine1, string addressLine2,
+            string city, string state, string zip)
         {
             GotoPracticeSettings();
 
             Location.Click();
 
-            SearchGrid(1, "celebration1");
+            SearchGrid("celebration", 1);
 
-            Thread.Sleep(3000);
+            Thread.Sleep(1000);
 
             WaitForElementVisible<Locations>(30);
 
             Add.Click();
 
-            ShortName.SendKeys("CEL2");
-            LocationName.SendKeys("Celebration2");
-            AddressLine1.SendKeys("Celebration");
-            AddressLine2.SendKeys("Celebration Jn");
-            City.SendKeys("Celebration");
-            State.Select("Alabama");
-            Zip.SendKeys("123456789");
+            ShortName.SendKeys(shortName);
+            LocationName.SendKeys(locationName);
+            AddressLine1.SendKeys(addressLine1);
+            AddressLine2.SendKeys(addressLine2);
+            City.SendKeys(city);
+            State.Select(state);
+            Zip.SendKeys(zip);
 
             Save.Click();
 

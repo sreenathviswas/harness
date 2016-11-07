@@ -38,7 +38,7 @@ namespace Harness
             //basicInfo.UpdateBasicInfo("Celebration Dental Group", "1003947326", 593408806, "http://celebration.fuzeqa1.com");
 
             Locations location = new Locations();
-            location.AddLocation();
+            location.AddLocation("CEL2", "Celebration2", "Celebration", "Celebration Jn", "Celebration", "Alabama", "123456789");
         }
 
         [TearDown]

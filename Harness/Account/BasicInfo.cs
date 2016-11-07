@@ -27,7 +27,10 @@ namespace Harness
         [Clearable]
         [FindsBy(How = How.Name, Using = "WebsiteEdit")]
         public IWebElement Website { get; set; }
-        
+                
+        [FindsBy(How = How.XPath, Using = "//div[@title='State']")]
+        public IWebElement State { get; set; }
+
         public BasicInfo()
         {
             PageFactory.InitElements(SearchContext.Driver, this);
@@ -35,24 +38,24 @@ namespace Harness
 
         public void UpdateBasicInfo(string accountName, string npi, int taxID, string website)
         {
-            UserMenu.Click();
-
-            PracticeSettings.Click();
+            GotoPracticeSettings();
 
             Edit.Click();
 
-            WaitForElement<BasicInfo>(30);
+            WaitForElementVisible<BasicInfo>(30);
 
             ClearAll<BasicInfo>(this);
-           
-            AccountName.SendKeys(accountName);        
-            NPI.SendKeys(npi);            
+
+            AccountName.SendKeys(accountName);
+            NPI.SendKeys(npi);
             TaxID.SendKeys(taxID.ToString());
             Website.SendKeys(website);
+
+            State.Select("Alabama");
 
             Save.Click();
 
             Assert.AreEqual("Account details updated successfully", Toastr.Text);
-        }        
+        }
     }
 }

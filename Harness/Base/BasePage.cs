@@ -26,9 +26,15 @@ namespace Harness
         [FindsBy(How = How.ClassName, Using = "toast-title")]
         public IWebElement Toastr { get; set; }
 
+        public void GotoPracticeSettings()
+        {
+            UserMenu.Click();
+
+            PracticeSettings.Click();
+        }
 
 
-        public void WaitForElement<T>(int seconds)
+        public void WaitForElementVisible<T>(int seconds)
         {
             foreach (var property in typeof(T).GetProperties())
             {
@@ -68,5 +74,6 @@ namespace Harness
                 }
             }
         }
-    }
+
+    }   
 }

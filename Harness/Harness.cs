@@ -19,7 +19,7 @@ namespace Harness
             SearchContext.Driver = new ChromeDriver();
             SearchContext.Driver.Manage().Window.Maximize();
             SearchContext.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(60));
-            SearchContext.Driver.Navigate().GoToUrl("http://celebration.fuzeqa1.com/#/login");
+            SearchContext.Driver.Navigate().GoToUrl("http://celebration.fuzeqa2.com/#/login");
         }
 
         [TestCase("chinchu", "Abc@123")]
